@@ -1,0 +1,4 @@
+added the Fire trail VFX to the game
+issues to be fixed :- 
+1.trail size is relative to speed of the ball (slow ball == nop trial fast ball bigg trial)
+2.create an instance of the ball instead of repositioning the ball at other portal so the player doesnt see the big trail
