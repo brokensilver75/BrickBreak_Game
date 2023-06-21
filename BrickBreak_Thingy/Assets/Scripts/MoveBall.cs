@@ -12,7 +12,7 @@ public class MoveBall : MonoBehaviour
     void Start()
     {
         ballRigidBody = Ball.GetComponent<Rigidbody>();
-        ballRigidBody.velocity = new Vector3(0, -ballVelocity, 0) * Time.deltaTime;
+        ballRigidBody.velocity = new Vector3(0,-ballVelocity, 0) * Time.deltaTime;
         
     }
 
