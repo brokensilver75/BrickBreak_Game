@@ -22,13 +22,27 @@ public class MoveBall : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
+        
         if (other.gameObject.tag == "P1")
         {
             Ball.transform.position = P2.transform.position + new Vector3(0, -offset, 0);
+            /*Destroy(Ball);
+            Instantiate(Ball, P2.transform.position + new Vector3(0, -offset, 0) , Quaternion.identity);
+            if (ballRigidBody.velocity.y == 0f)
+            {
+                ballRigidBody.AddForce(0, force, 0);
+            }*/
+            
         }
         if (other.gameObject.tag == "P2")
         {
             Ball.transform.position = P1.transform.position + new Vector3(0, offset, 0);
+            /*Destroy(Ball);
+            Instantiate(Ball, P1.transform.position + new Vector3(0, offset, 0), Quaternion.identity);
+            if (ballRigidBody.velocity.y == 0f)
+            {
+                ballRigidBody.AddForce(0, -force, 0);
+            }*/
         }
     }
 }
