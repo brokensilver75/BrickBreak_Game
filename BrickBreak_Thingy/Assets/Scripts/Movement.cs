@@ -28,8 +28,8 @@ public class Movement : MonoBehaviour
 
     private void MovePlayers()
     {
-        player1Position.x = Mathf.Clamp(P1.transform.position.x, leftExtreme, rightExtreme);
-        player2Position.x = Mathf.Clamp(P2.transform.position.x, leftExtreme, rightExtreme);
+        //player1Position.x = Mathf.Clamp(P1.transform.position.x, leftExtreme, rightExtreme);
+        //player2Position.x = Mathf.Clamp(P2.transform.position.x, leftExtreme, rightExtreme);
         //Move Player1
         if (Input.GetKey(KeyCode.A))
         {
