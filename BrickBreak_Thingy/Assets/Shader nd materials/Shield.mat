@@ -32,11 +32,17 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: a10b236f91180ff45811231ff10c8880, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _Shield_range: -0.26
+    - _Speed: 0.2
     m_Colors:
-    - _Shield_color: {r: 0.509434, g: 0.40361112, b: 0.003203924, a: 0.6862745}
+    - _Shield_color: {r: 2.0392158, g: 0.45842126, b: 0.015686214, a: 0.6862745}
   m_BuildTextureStacks: []
