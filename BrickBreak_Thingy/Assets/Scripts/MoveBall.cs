@@ -21,7 +21,6 @@ public class MoveBall : MonoBehaviour
     void Update()
     {
         MaintainballVelocity();
-        //Debug.Log(Ball.transform.forward);
     }
 
     private void MaintainballVelocity()
@@ -31,22 +30,24 @@ public class MoveBall : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-       
-        
         if (other.gameObject.tag == "P1")
         {
-            Ball.transform.position = P2.transform.position + new Vector3(0, -offset, 0);
+            TeleportToPortal(P2);
         }
         if (other.gameObject.tag == "P2")
         {
-            Ball.transform.position = P1.transform.position + new Vector3(0, offset, 0);
+            TeleportToPortal(P1);
         }
         if (other.gameObject.tag == "Obstacle")
         {
+              //Change Direction of ball when it hits obstacle
               newDirection = Vector3.Reflect(Ball.transform.forward, -other.contacts[0].normal).normalized;
               Ball.transform.rotation = Quaternion.LookRotation(newDirection);
-              //Ball.transform.position = Vector3.Reflect(Ball.transform.forward, other.contacts[0].normal).normalized;
-              
         }
+    }
+
+    private void TeleportToPortal(GameObject Portal)
+    {
+        Ball.transform.position = Portal.transform.position + new Vector3(0, -offset, 0);
     }
 }
