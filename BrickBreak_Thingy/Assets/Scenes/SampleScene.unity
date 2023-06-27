@@ -5895,7 +5895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2c2f733713c2443959bcc0bb3d0a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ufo: {fileID: 319467766434261770, guid: c15876ab21f288f4fba34481111acbd1, type: 3}
+  ufoPrefab: {fileID: 319467766434261770, guid: c15876ab21f288f4fba34481111acbd1, type: 3}
+  spawnInterval: 5
 --- !u!1 &1997742828
 GameObject:
   m_ObjectHideFlags: 0
