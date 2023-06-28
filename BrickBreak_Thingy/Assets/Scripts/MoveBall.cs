@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
-    [SerializeField] GameObject P1, P2, Ball;
+    [SerializeField] GameObject P1, P2, Ball, ufoExplosion;
     [SerializeField] float force, offset, ballVelocity = 5f;
     Rigidbody ballRigidBody;
     Vector3 newDirection;
+    GameObject newExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +41,27 @@ public class MoveBall : MonoBehaviour
         }
         if (other.gameObject.tag == "Obstacle")
         {
-              //Change Direction of ball when it hits obstacle
-              newDirection = Vector3.Reflect(Ball.transform.forward, -other.contacts[0].normal).normalized;
-              Ball.transform.rotation = Quaternion.LookRotation(newDirection);
-              Destroy(other.gameObject);
+            //Change Direction of ball when it hits obstacle
+            ReflectBall(other);
+            StartCoroutine(ExplodeUFO(other));
         }
+        if (other.gameObject.tag == "Shield")
+        {
+            ReflectBall(other);
+        }
+    }
+
+    private IEnumerator ExplodeUFO(Collision other)
+    {
+        newExplosion = Instantiate(ufoExplosion, other.gameObject.transform.position, Quaternion.identity);
+        Destroy(other.gameObject);
+        yield return new WaitForSecondsRealtime(1f);
+        Destroy(newExplosion);
+    }
+
+    private void ReflectBall(Collision other)
+    {
+        newDirection = Vector3.Reflect(Ball.transform.forward, -other.contacts[0].normal).normalized;
+        Ball.transform.rotation = Quaternion.LookRotation(newDirection);
     }
 }
