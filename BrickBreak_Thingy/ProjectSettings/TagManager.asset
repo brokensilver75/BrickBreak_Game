@@ -9,7 +9,8 @@ TagManager:
   - Obstacle
   - Ball
   - Shield
-  - Bounds
+  - upperBound
+  - lowerBound
   layers:
   - Default
   - TransparentFX

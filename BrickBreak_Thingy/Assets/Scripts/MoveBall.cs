@@ -49,6 +49,14 @@ public class MoveBall : MonoBehaviour
         {
             ReflectBall(other);
         }
+        if (other.gameObject.tag == "upperBound")
+        {
+            Ball.transform.position = P2.transform.position + new Vector3(0, -offset, 0);
+        }
+        if (other.gameObject.tag == "lowerBound")
+        {
+            Ball.transform.position = P1.transform.position + new Vector3(0, offset, 0);
+        }
     }
 
     private IEnumerator ExplodeUFO(Collision other)
