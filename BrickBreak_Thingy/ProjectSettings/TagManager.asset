@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Ball
   - Shield
+  - Bounds
   layers:
   - Default
   - TransparentFX
