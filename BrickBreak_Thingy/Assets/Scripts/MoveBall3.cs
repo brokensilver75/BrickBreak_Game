@@ -24,13 +24,29 @@ public class MoveBall3 : MonoBehaviour
     }
 
     private void MaintainBallVelocity(Vector3 direction)
-    {
-        ballRigidBody.velocity = direction * ballSpeed * Time.deltaTime;
+    { 
+        if (direction.x == 0 && direction.y == 0)
+        {
+            if (ballRigidBody.velocity.y > 0)
+            {
+                ballRigidBody.velocity = new Vector3 (-1f, 1f , 0) * ballSpeed * Time.deltaTime;
+            }
+            else if (ballRigidBody.velocity.y < 0)
+            {
+                ballRigidBody.velocity = new Vector3 (-1f, -1f , 0) * ballSpeed * Time.deltaTime;
+            }
+            
+        }
+        else
+        {
+            ballRigidBody.velocity = direction * ballSpeed * Time.deltaTime;
+        }
     }
 
     private void ReflectBall(Collision other)
     {
         newDirection = Vector3.Reflect(ballRigidBody.velocity, other.contacts[0].normal).normalized;
+        //Debug.Log("X:   " + ballRigidBody.velocity.x + "\nY:    " + ballRigidBody.velocity.y);
     }
 
     void OnCollisionEnter(Collision other)

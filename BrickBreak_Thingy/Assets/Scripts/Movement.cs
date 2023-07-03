@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     float horizontalMovement;
     Vector3 player1Position, player2Position;
     [SerializeField] float leftExtreme, rightExtreme;
-    [SerializeField] GameObject P1, P2;
+    [SerializeField] GameObject P1, P2, ball;
     // Start is called before the first frame update
     void Start()
     {
