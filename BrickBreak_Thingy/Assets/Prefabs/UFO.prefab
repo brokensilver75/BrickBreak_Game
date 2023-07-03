@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1091325287858188720}
   - component: {fileID: 4074333814325722645}
   - component: {fileID: 2264754592966232799}
-  - component: {fileID: 625881516343039561}
   - component: {fileID: 625881516343039564}
+  - component: {fileID: -207162813526864369}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Obstacle
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &625881516343039561
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319467766434261770}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8672336782658908590, guid: acf86ff126a023f4184f2e74224ff3ea, type: 3}
 --- !u!114 &625881516343039564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ufoSpeed: 1
   ufoRotation: 15
+--- !u!65 &-207162813526864369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319467766434261770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019339519, y: 0.019339515, z: 0.0068471143}
+  m_Center: {x: -1.0706801e-17, y: 0.00000087032083, z: 0.0007535111}

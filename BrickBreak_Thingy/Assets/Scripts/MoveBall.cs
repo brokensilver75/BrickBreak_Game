@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
-    [SerializeField] GameObject P1, P2, Ball, ufoExplosion;
+    [SerializeField] GameObject P1, P2, Ball, ufoExplosion, shield;
     [SerializeField] float force, offset, ballVelocity = 5f;
     Rigidbody ballRigidBody;
     Vector3 newDirection;
@@ -15,18 +15,19 @@ public class MoveBall : MonoBehaviour
     {
         ballRigidBody = Ball.GetComponent<Rigidbody>();
         ballRigidBody.velocity = new Vector3(0,-ballVelocity, 0) * Time.deltaTime;
-        Ball.transform.forward = new Vector3(0, -1f, 0);
+        ballRigidBody.transform.rotation = new Quaternion (180f, 0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         MaintainballVelocity();
+        Debug.Log (shield.GetComponent<MeshFilter>().mesh.normals);
     }
 
     private void MaintainballVelocity()
     {
-        ballRigidBody.velocity = Ball.transform.forward * ballVelocity;
+        ballRigidBody.velocity = Ball.transform.rotation.eulerAngles.normalized * ballVelocity;
     }
 
     void OnCollisionEnter(Collision other)
@@ -51,11 +52,11 @@ public class MoveBall : MonoBehaviour
         }
         if (other.gameObject.tag == "upperBound")
         {
-            Ball.transform.position = P2.transform.position + new Vector3(0, -offset, 0);
+            Ball.transform.position = P1.transform.position + new Vector3(0, -offset, 0);
         }
         if (other.gameObject.tag == "lowerBound")
         {
-            Ball.transform.position = P1.transform.position + new Vector3(0, offset, 0);
+            Ball.transform.position = P2.transform.position + new Vector3(0, offset, 0);
         }
     }
 
@@ -71,5 +72,7 @@ public class MoveBall : MonoBehaviour
     {
         newDirection = Vector3.Reflect(Ball.transform.forward, -other.contacts[0].normal).normalized;
         Ball.transform.rotation = Quaternion.LookRotation(newDirection);
+        //Debug.Log(other.contacts[0].normal);
+        //Ball.transform.forward = Ball.transform.rotation.eulerAngles.normalized;
     }
 }

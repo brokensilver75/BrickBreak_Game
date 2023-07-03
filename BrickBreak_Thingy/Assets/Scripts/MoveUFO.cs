@@ -15,6 +15,6 @@ public class MoveUFO : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(-ufoSpeed, 0, 0) * Time.deltaTime;
-        transform.Rotate(0, 0, ufoRotation * Time.deltaTime, Space.Self);
+        //transform.Rotate(0, 0, ufoRotation * Time.deltaTime, Space.Self);
     }
 }
