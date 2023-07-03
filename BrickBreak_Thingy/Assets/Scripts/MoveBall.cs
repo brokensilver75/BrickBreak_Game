@@ -14,21 +14,19 @@ public class MoveBall : MonoBehaviour
     void Start()
     {
         ballRigidBody = Ball.GetComponent<Rigidbody>();
-        ballRigidBody.velocity = new Vector3(0,-ballVelocity, 0) * Time.deltaTime;
-        ballRigidBody.transform.rotation = new Quaternion (180f, 0, 0, 0);
+        Ball.transform.forward = new Vector3 (0, -1f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        MaintainballVelocity();
-        Debug.Log (shield.GetComponent<MeshFilter>().mesh.normals);
+        
     }
 
-    private void MaintainballVelocity()
+    /*private void MaintainballVelocity()
     {
         ballRigidBody.velocity = Ball.transform.rotation.eulerAngles.normalized * ballVelocity;
-    }
+    }*/
 
     void OnCollisionEnter(Collision other)
     {
@@ -70,8 +68,9 @@ public class MoveBall : MonoBehaviour
 
     private void ReflectBall(Collision other)
     {
-        newDirection = Vector3.Reflect(Ball.transform.forward, -other.contacts[0].normal).normalized;
-        Ball.transform.rotation = Quaternion.LookRotation(newDirection);
+        newDirection = Vector3.Reflect(Ball.transform.forward, other.contacts[0].normal).normalized;
+        ballRigidBody.velocity = newDirection * ballVelocity;
+        //Ball.transform.rotation = Quaternion.LookRotation(newDirection);
         //Debug.Log(other.contacts[0].normal);
         //Ball.transform.forward = Ball.transform.rotation.eulerAngles.normalized;
     }
