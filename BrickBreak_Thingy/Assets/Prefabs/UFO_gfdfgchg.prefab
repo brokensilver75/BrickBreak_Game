@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 625881516343039564}
   - component: {fileID: -207162813526864369}
   m_Layer: 0
-  m_Name: UFO
+  m_Name: UFO_gfdfgchg
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

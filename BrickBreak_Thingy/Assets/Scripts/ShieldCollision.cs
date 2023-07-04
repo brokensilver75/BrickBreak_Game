@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveUFO : MonoBehaviour
+public class ShieldCollision : MonoBehaviour
 {
-    [SerializeField] float ufoSpeed, ufoRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +13,14 @@ public class MoveUFO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-ufoSpeed, 0, 0) * Time.deltaTime;
-        //transform.Rotate(0, 0, ufoRotation * Time.deltaTime, Space.Self);
+        
     }
-    
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

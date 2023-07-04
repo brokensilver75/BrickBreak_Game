@@ -35,6 +35,13 @@ public class MoveBall3 : MonoBehaviour
             {
                 ballRigidBody.velocity = new Vector3 (-1f, -1f , 0) * ballSpeed * Time.deltaTime;
             }
+            else if (ballRigidBody.velocity.y == 0)
+            {
+                if (ballRigidBody.velocity.x == 1 || ballRigidBody.velocity.x == -1)
+                {
+                    ballRigidBody.velocity = new Vector3(ballRigidBody.velocity.x, -1, 0);
+                }
+            }
             
         }
         else
@@ -62,9 +69,9 @@ public class MoveBall3 : MonoBehaviour
             break;
             case "Shield": ReflectBall(other);
             break;
-            case "upperBound": transform.position = p1.transform.position + new Vector3(0, -posOffset, 0);
+            case "upperBound": transform.position = p1.transform.position + new Vector3(0, posOffset, 0);
             break;
-            case "lowerBound": transform.position = p2.transform.position + new Vector3(0, posOffset, 0);
+            case "lowerBound": transform.position = p2.transform.position + new Vector3(0, -posOffset, 0);
             break;
             default:
             break;
