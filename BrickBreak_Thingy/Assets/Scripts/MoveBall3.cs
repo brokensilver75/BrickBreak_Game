@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,6 @@ public class MoveBall3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        QualitySettings.vSyncCount = 1;
         ballRigidBody = GetComponent<Rigidbody>();
         newDirection = new Vector3 (0, -1f, 0);
     }
@@ -52,7 +52,7 @@ public class MoveBall3 : MonoBehaviour
 
     private void ReflectBall(Collision other)
     {
-        newDirection = Vector3.Reflect(ballRigidBody.velocity, other.contacts[0].normal).normalized;
+        newDirection = Vector3.Reflect(newDirection, other.contacts[0].normal).normalized;
         //Debug.Log("X:   " + ballRigidBody.velocity.x + "\nY:    " + ballRigidBody.velocity.y);
     }
 

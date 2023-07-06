@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    GameObject player1, player2;
-    bool ballSpawned = false;
+    bool ballStartMoving = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +15,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool GetBallMovingStatus()
+    {
+        return ballStartMoving;
+    }
+
+    public void SetBallMovingStatus(bool value)
+    {
+        ballStartMoving = value;
     }
 }

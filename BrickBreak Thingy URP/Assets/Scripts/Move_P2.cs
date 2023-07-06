@@ -18,7 +18,7 @@ public class Move_P2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ballSpawned = GetComponent<GameManager>().ballSpawned;
+        
         movement = new Vector3(moveSpeed * Time.deltaTime, 0, 0);
         MovePlayer();
     }
