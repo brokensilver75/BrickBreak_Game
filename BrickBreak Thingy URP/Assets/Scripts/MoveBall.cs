@@ -11,12 +11,16 @@ public class MoveBall : MonoBehaviour
     bool startMoving = false;
     [Header("Player Portal")]
     [SerializeField]GameObject p1, p2;
+    TrailRenderer trail0, trail1;
 
     // Start is called before the first frame update
     void Start()
     {
         ballRb = GetComponent<Rigidbody>();
         newDirection = new Vector3(0, -1, 0);
+        trail0 = transform.GetChild(0).gameObject.GetComponent<TrailRenderer>();
+        trail1 = transform.GetChild(1).gameObject.GetComponent<TrailRenderer>();
+
     }
 
     // Update is called once per frame
@@ -42,15 +46,19 @@ public class MoveBall : MonoBehaviour
     {
         switch (other.gameObject.tag)
         {
-            case "P1": transform.position = p2.transform.position + new Vector3(0, -7, 0);
-            break;
-            case "P2": transform.position = p1.transform.position + new Vector3(0, 7, 0);
-            break;
+            case "P1":  transform.position = p2.transform.position + new Vector3(0, -7, 0); 
+                        trail0.Clear();
+                        trail1.Clear();                                               
+                        break;
+            case "P2":  transform.position = p1.transform.position + new Vector3(0, 7, 0);
+                        trail0.Clear();
+                        trail1.Clear();
+                        break;
             case "UFO": ReflectBall(other);
-            Destroy(other.gameObject);
-            break;
+                        Destroy(other.gameObject);
+                        break;
             case "Shield": ReflectBall(other);
-            break;
+                           break;
             default: break;
         }
     }
