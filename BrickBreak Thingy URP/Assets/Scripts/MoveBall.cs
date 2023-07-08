@@ -46,11 +46,11 @@ public class MoveBall : MonoBehaviour
     {
         switch (other.gameObject.tag)
         {
-            case "P1":  transform.position = p2.transform.position + new Vector3(0, -7, 0); 
+            case "P1":  transform.position = p2.transform.position + new Vector3(0, -1, 0); 
                         trail0.Clear();
                         trail1.Clear();                                               
                         break;
-            case "P2":  transform.position = p1.transform.position + new Vector3(0, 7, 0);
+            case "P2":  transform.position = p1.transform.position + new Vector3(0, 1, 0);
                         trail0.Clear();
                         trail1.Clear();
                         break;
