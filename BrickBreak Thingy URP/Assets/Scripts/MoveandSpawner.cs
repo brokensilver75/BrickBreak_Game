@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveandSpawner : MonoBehaviour
 {
     [Header("Spawner Movement")]
-    [SerializeField] float topLimit = 20.4f, bottomLimit = -17.8f, speed = 100f;
+    [SerializeField] float topLimit = 4f, bottomLimit = -1f, speed = 100f;
     [Header("Spawn Stuff")]
     [SerializeField] GameObject ufo;
     [Header("Spawn Stuff")]
