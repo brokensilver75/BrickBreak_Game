@@ -25,6 +25,7 @@ public class MoveandSpawner : MonoBehaviour
     void Update()
     {
         MoveSpawner();
+        
     }
 
     private void MoveSpawner()

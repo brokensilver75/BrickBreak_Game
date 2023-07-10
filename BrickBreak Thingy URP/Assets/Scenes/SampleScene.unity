@@ -1037,12 +1037,12 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 37.378845
+      value: 37.378853
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1072,12 +1072,12 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1720,12 +1720,12 @@ PrefabInstance:
     - target: {fileID: 6742597092925723621, guid: 52334825e7c10324da42946b006b9847,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 6742597092925723621, guid: 52334825e7c10324da42946b006b9847,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 6742597092925723621, guid: 52334825e7c10324da42946b006b9847,
         type: 3}
@@ -1776,7 +1776,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5d9279a4262d7684c92776c522b553a6, type: 2}
+      objectReference: {fileID: 2100000, guid: 372ea6a7125344f47954638d3ece316a, type: 2}
+    - target: {fileID: 6742597092925723627, guid: 52334825e7c10324da42946b006b9847,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52334825e7c10324da42946b006b9847, type: 3}
 --- !u!1 &7113518289801222324

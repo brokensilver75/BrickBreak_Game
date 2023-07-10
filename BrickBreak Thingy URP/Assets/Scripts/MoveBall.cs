@@ -35,11 +35,14 @@ public class MoveBall : MonoBehaviour
         {
             MaintainBallVelocity(newDirection);
         }
+        //Debug.Log(ballRb.velocity);
     }
 
     void MaintainBallVelocity(Vector3 direction)
     {
-        ballRb.velocity = direction * moveSpeed * Time.deltaTime;
+        float speed = moveSpeed * Time.deltaTime;
+        ballRb.velocity = direction * speed;
+        Debug.Log (speed);
     }
 
     void OnCollisionEnter(Collision other)
