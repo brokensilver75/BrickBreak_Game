@@ -40,9 +40,15 @@ public class MoveBall : MonoBehaviour
 
     void MaintainBallVelocity(Vector3 direction)
     {
+        /*if(direction.z != 0 && direction.x == 0)
+        {
+            direction.x = direction.z;
+            direction.z = 0;
+        }*/
         float speed = moveSpeed * Time.deltaTime;
-        ballRb.velocity = direction * speed;
-        Debug.Log (speed);
+        speed = Mathf.Clamp(speed, 3, 5);
+        ballRb.velocity = direction * speed;            
+        Debug.Log (direction.x);
     }
 
     void OnCollisionEnter(Collision other)
