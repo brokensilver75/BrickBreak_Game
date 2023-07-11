@@ -26,7 +26,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -35,7 +35,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: deb42d6cf21ba8f4d83c79309fbb9db8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 35c1ae29bba7a8941a620e15fe58ad9e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -57,6 +57,6 @@ Material:
     - _QueueOffset: 0
     - _texture_speed: 0.5
     m_Colors:
-    - _Color_1: {r: 5.521569, g: 2.1146064, b: 0, a: 1}
-    - _Color_2: {r: 3.0296125, g: 2.583747, b: 0.30137512, a: 0.9764706}
+    - _Color_1: {r: 22.086275, g: 8.556987, b: 0, a: 1}
+    - _Color_2: {r: 6.0592246, g: 5.1709614, b: 0.6344738, a: 0.9764706}
   m_BuildTextureStacks: []
