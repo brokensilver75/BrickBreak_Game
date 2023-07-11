@@ -52,10 +52,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fresnel_level: 0.033
+    - _Fresnel_level: 0.016
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Step_scale: 1
+    - _Step_scale: 0.903
     m_Colors:
     - _Base: {r: 0.51510096, g: 6.919005, b: 7.027452, a: 1}
     - _dissolve: {r: 5.5806527, g: 0.056502916, b: 0, a: 1}
