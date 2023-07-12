@@ -53,7 +53,7 @@ public class MoveBall : MonoBehaviour
         float speed = moveSpeed * Time.deltaTime;
         speed = Mathf.Clamp(speed, 3, 5);
         ballRb.velocity = direction * speed;            
-        Debug.Log (direction.x);
+        //Debug.Log (direction.x);
     }
 
     void OnCollisionEnter(Collision other)

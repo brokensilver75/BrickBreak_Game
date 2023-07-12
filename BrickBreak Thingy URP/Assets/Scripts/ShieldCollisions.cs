@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyUFO : MonoBehaviour
+public class ShieldCollisions : MonoBehaviour
 {
     // Start is called before the first frame update
+    float health = 100f;
     void Start()
     {
         
@@ -13,7 +14,10 @@ public class DestroyUFO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            Destroy (gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -21,6 +25,7 @@ public class DestroyUFO : MonoBehaviour
         if (other.gameObject.tag == "UFO")
         {
             Destroy(other.gameObject);  
+            health -= 10f;            
         }
     }
 }
