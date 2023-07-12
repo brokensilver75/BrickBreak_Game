@@ -31,11 +31,16 @@ public class MoveBall : MonoBehaviour
             startMoving = true;
         }
 
+        
+        //Debug.Log(ballRb.velocity);
+    }
+
+    void FixedUpdate()
+    {
         if (startMoving == true)
         {
             MaintainBallVelocity(newDirection);
         }
-        //Debug.Log(ballRb.velocity);
     }
 
     void MaintainBallVelocity(Vector3 direction)

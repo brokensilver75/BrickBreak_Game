@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0007988
+      value: 10.415313
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -697,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548317, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0007988
+      value: 10.415313
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -786,7 +786,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548317, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -811,7 +811,6 @@ GameObject:
   - component: {fileID: 688343111}
   - component: {fileID: 688343110}
   - component: {fileID: 688343109}
-  - component: {fileID: 688343108}
   - component: {fileID: 688343112}
   m_Layer: 0
   m_Name: Spawner
@@ -820,19 +819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &688343108
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688343107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &688343109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -993,8 +979,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9184978, y: 0.76919556, z: 1.9078317}
-  m_Center: {x: -0.0344882, y: -0.038467407, z: -0.007693529}
+  m_Size: {x: 2.9184978, y: 0.30072856, z: 1.9078317}
+  m_Center: {x: -0.0344882, y: 0.068889424, z: -0.007693529}
 --- !u!4 &1211283737
 Transform:
   m_ObjectHideFlags: 0
@@ -1112,8 +1098,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55214b9c073ea4148b8212eed58ca155,
+        type: 3}
+      propertyPath: m_TagString
+      value: Shield
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55214b9c073ea4148b8212eed58ca155, type: 3}
+--- !u!1 &1492933277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55214b9c073ea4148b8212eed58ca155,
+    type: 3}
+  m_PrefabInstance: {fileID: 1492933276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492933282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492933277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6196a8579ff65c644ac4106761713382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1492933283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492933277}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &1492933284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492933277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011677871, y: 0.03738145, z: 0.018317332}
+  m_Center: {x: -0.0022746786, y: 0, z: 0}
 --- !u!1001 &1693325008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1139,7 +1177,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0007988
+      value: 10.415313
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1194,7 +1232,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548317, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1659,7 +1697,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0007988
+      value: 10.415313
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1714,7 +1752,7 @@ PrefabInstance:
     - target: {fileID: 6420750432779548313, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6420750432779548317, guid: a6d08317286602143bd1fd397af324da,
         type: 3}
@@ -1966,8 +2004,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9184978, y: 0.76919556, z: 1.9078317}
-  m_Center: {x: -0.0344882, y: -0.038467407, z: -0.007693529}
+  m_Size: {x: 2.9184978, y: 0.27170825, z: 1.9078317}
+  m_Center: {x: -0.0344882, y: 0.12211406, z: -0.007693529}
 --- !u!33 &8865027295814696707
 MeshFilter:
   m_ObjectHideFlags: 0
