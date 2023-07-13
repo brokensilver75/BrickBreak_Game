@@ -6,8 +6,14 @@ public class ShieldCollisions : MonoBehaviour
 {
     // Start is called before the first frame update
     float health = 100f;
+    Material shieldMaterial;
+    Shader shieldShader; 
     void Start()
     {
+        shieldMaterial = GetComponent<MeshRenderer>().sharedMaterial;
+        shieldShader = GetComponent<Shader>();
+
+        Debug.Log (shieldMaterial.GetColor("_Base"));
         
     }
 
@@ -25,7 +31,9 @@ public class ShieldCollisions : MonoBehaviour
         if (other.gameObject.tag == "UFO")
         {
             Destroy(other.gameObject);  
-            health -= 10f;            
+            health -= 10f;
+            shieldMaterial.SetColor("_Base", Color.red);
+                    
         }
     }
 }
