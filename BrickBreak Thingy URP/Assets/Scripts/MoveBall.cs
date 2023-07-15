@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveBall : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 100f;
-    GameManager gameManager;
+    
     Vector3 newDirection;
     Rigidbody ballRb;
     bool startMoving = false;

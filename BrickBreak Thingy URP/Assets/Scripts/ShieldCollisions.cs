@@ -9,6 +9,8 @@ public class ShieldCollisions : MonoBehaviour
     [Header("Intensity of shield")]
     [SerializeField] float intensity = 3.2f;
     Material shieldMaterial;
+    BoxCollider shieldCollider;
+    MeshRenderer shieldRenderer;
     Shader shieldShader; 
     Color[] shieldColor = {new Color(0.1098f, 1.4980f, 1.4274f, 1f),
                            new Color(1.3200f, 1.4980f, 0.1098f, 1f),
@@ -18,7 +20,9 @@ public class ShieldCollisions : MonoBehaviour
     void Start()
     {
         shieldMaterial = GetComponent<MeshRenderer>().sharedMaterial;
-        shieldShader = GetComponent<Shader>();        
+        shieldShader = GetComponent<Shader>();
+        shieldCollider = GetComponent<BoxCollider>();
+        shieldRenderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -38,7 +42,9 @@ public class ShieldCollisions : MonoBehaviour
             
         if (health <= 0)
         {
-            Destroy (gameObject);
+            //Destroy (gameObject);
+            shieldRenderer.enabled = false;
+            shieldCollider.enabled = false;
         }
     }
 
@@ -49,5 +55,10 @@ public class ShieldCollisions : MonoBehaviour
             Destroy(other.gameObject);  
             health -= 10f;
         }
+    }
+
+    public float GetHealth()
+    {
+        return health; 
     }
 }
