@@ -12,6 +12,10 @@ public class MoveBall : MonoBehaviour
     [Header("Player Portal")]
     [SerializeField]GameObject p1, p2;
     TrailRenderer trail0, trail1;
+    
+    [Header("Manager Script")]
+    [SerializeField] GameObject manager;
+    float gameScore;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,7 @@ public class MoveBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameScore = manager.GetComponent<Manager>().GetScore();
         if (Input.GetKey(KeyCode.Space))
         {
             startMoving = true;
@@ -70,6 +75,8 @@ public class MoveBall : MonoBehaviour
                         break;
             case "UFO": ReflectBall(other);
                         Destroy(other.gameObject);
+                        manager.GetComponent<Manager>().SetScore(gameScore + 1);
+                        Debug.Log(manager.GetComponent<Manager>().GetScore());
                         break;
             case "Shield": ReflectBall(other);
                            break;
