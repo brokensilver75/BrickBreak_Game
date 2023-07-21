@@ -57,6 +57,6 @@ Material:
     - _QueueOffset: 0
     - _Step_scale: 1
     m_Colors:
-    - _Base: {r: 4.7936, g: 0.35136002, b: 0.43583998, a: 3.2}
+    - _Base: {r: 0.35136002, g: 4.7936, b: 4.56768, a: 3.2}
     - _dissolve: {r: 22.32261, g: 0.23374462, b: 0, a: 1}
   m_BuildTextureStacks: []

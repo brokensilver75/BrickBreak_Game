@@ -9,7 +9,8 @@ public class Manager : MonoBehaviour
     bool gamePaused;
     [SerializeField] GameObject playButton, loserText, shield, replayButton;
     float score;
-    [SerializeField] Text scoreText;
+    [SerializeField] float levelTimer = 30f;
+    [SerializeField] Text scoreText, timer;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        levelTimer -= 1 * Time.deltaTime;
+        timer.text = levelTimer.ToString("0");
         if (Input.GetKeyUp(KeyCode.Escape))
         {
            GamePauseCondition();
@@ -33,6 +36,11 @@ public class Manager : MonoBehaviour
         if (shield.GetComponent<ShieldCollisions>().GetHealth() <= 0)
         {
             GameLose();
+        }
+
+        if (levelTimer <= 0)
+        {
+            GameEnd();
         }
 
         scoreText.text = score.ToString();
@@ -64,6 +72,12 @@ public class Manager : MonoBehaviour
             loserText.SetActive(true);
             replayButton.SetActive(true);
             Time.timeScale = 0;
+    }
+
+    public void GameEnd()
+    {
+        replayButton.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Restart()
