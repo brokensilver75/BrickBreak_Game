@@ -76,7 +76,6 @@ public class MoveBall : MonoBehaviour
             case "UFO": ReflectBall(other);
                         Destroy(other.gameObject);
                         manager.GetComponent<Manager>().SetScore(gameScore + 1);
-                        Debug.Log(manager.GetComponent<Manager>().GetScore());
                         break;
             case "Shield": ReflectBall(other);
                            break;

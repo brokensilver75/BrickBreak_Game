@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     bool gamePaused;
-    [SerializeField] GameObject playButton, loserText, shield, replayButton;
-    float score;
+    [SerializeField] GameObject playButton, loserText, shield, replayButton, highScoreText, prevHighScoreText;
+    float score, highScore;
     [SerializeField] float levelTimer = 30f;
     [SerializeField] Text scoreText, timer;
     
@@ -18,9 +18,12 @@ public class Manager : MonoBehaviour
         loserText.SetActive(false);
         playButton.SetActive(true);
         replayButton.SetActive(false);
+        highScoreText.SetActive(false);
+        prevHighScoreText.SetActive(false);
         gamePaused = true;
         Time.timeScale = 0;
         score = 0;
+        highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
     // Update is called once per frame
@@ -44,7 +47,12 @@ public class Manager : MonoBehaviour
         }
 
         scoreText.text = score.ToString();
-
+        PlayerPrefs.SetFloat("Score", PlayerPrefs.GetFloat("HighScore"));
+        if (score > highScore)
+        {
+            
+            PlayerPrefs.SetFloat("HighScore", score);
+        }
     }
 
     public void GamePauseCondition()
@@ -77,6 +85,10 @@ public class Manager : MonoBehaviour
     public void GameEnd()
     {
         replayButton.SetActive(true);
+        prevHighScoreText.GetComponent<Text>().text = "Previous High Score: " + PlayerPrefs.GetFloat("Score").ToString();
+        prevHighScoreText.SetActive(true);
+        highScoreText.GetComponent<Text>().text = "High Score:  " + PlayerPrefs.GetFloat("HighScore").ToString();
+        highScoreText.SetActive(true);
         Time.timeScale = 0;
     }
 
