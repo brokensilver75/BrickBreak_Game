@@ -10,6 +10,8 @@ public class MoveandSpawner : MonoBehaviour
     [SerializeField] GameObject ufo;
     [Header("Spawn Stuff")]
     [SerializeField] float spawnInterval;
+
+    bool startedRunning = false;
     
     GameObject newUFO;
     Vector3 spawnerSpeed;
